@@ -9,7 +9,7 @@
     $(".js-more").on('click', function() {
       let id = $(this).data("id");
       $.get("/product/" + id + "/body", function(data) {
-        alert(data);
+        data;
       });
     });
   });
