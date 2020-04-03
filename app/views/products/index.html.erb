@@ -1,5 +1,16 @@
 <h1>All Products</h1>
 
-<% @products.each do |post| %>
-  <%= render partial: "post", locals: {post: post} %>
+<% @products.each do |product| %>
+  <%= render partial: "product", locals: {product: product} %>
 <% end %>
+
+<script type="text/javascript" charset="utf-8"> 
+  $(function() {
+    $(".js-more").on('click', function() {
+      let id = $(this).data("id");
+      $.get("/product/" + id + "/body", function(data) {
+        alert(data);
+      });
+    });
+  });
+</script>
